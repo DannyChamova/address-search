@@ -1,0 +1,109 @@
+:root { font-family: system-ui, Arial, sans-serif; }
+
+body { margin: 0; padding: 0; background: #fff; color: #111; }
+.container { max-width: 720px; margin: 0 auto; padding: 16px; }
+
+h1 { margin: 0 0 12px; font-size: 24px; }
+h2 { margin: 18px 0 10px; font-size: 18px; }
+
+.label { display: block; margin: 12px 0 6px; font-weight: 600; }
+
+.input{
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  outline: none;
+}
+.input:focus { border-color: #bbb; }
+
+.autocomplete { position: relative; }
+
+.loader{
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #ddd;
+  border-top-color: #333;
+  border-radius: 50%;
+  display: none;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.suggestions {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  max-height: 260px;
+  overflow: auto;
+  display: none;
+  z-index: 10;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.suggestions li {
+  padding: 10px 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.suggestions li:hover { background: #f2f2f2; }
+.suggestions li.is-active { background: #f2f2f2; }
+
+.results { margin-top: 18px; }
+.results-list { margin: 0; padding: 0; list-style: none; }
+
+.result-item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 10px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+.result-item.is-active { background: #f7f7f7; }
+
+.result-main { min-width: 0; }
+.result-addr { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.result-meta { font-size: 13px; color: #555; margin-top: 4px; }
+.dot { margin: 0 6px; color: #999; }
+
+.btn-link{
+  display: inline-block;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #111;
+  white-space: nowrap;
+  background: #fff;
+}
+.btn-link:hover { background: #f6f6f6; }
+.btn-link.disabled{
+  color: #999;
+  pointer-events: none;
+  border-color: #eee;
+  background: #fafafa;
+}
+
+.status { margin-top: 12px; color: #444; min-height: 20px; }
+
+@media (max-width: 480px) {
+  .container { padding: 12px; }
+  h1 { font-size: 20px; }
+  .result-item { flex-direction: column; align-items: flex-start; }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="bg">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Търсене на адрес (ArcGIS)</title>
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <main class="container">
+    <h1>Търсене на адрес</h1>
+
+    <label class="label" for="addressInput">Адрес</label>
+
+    <div class="autocomplete" id="autocompleteRoot">
+      <input
+        id="addressInput"
+        class="input"
+        type="text"
+        placeholder="Напр. Sofia"
+        autocomplete="off"
+        aria-autocomplete="list"
+        aria-controls="suggestions"
+      />
+      <div id="loader" class="loader" aria-hidden="true"></div>
+      <ul id="suggestions" class="suggestions" role="listbox" aria-label="Подсказки"></ul>
+    </div>
+
+    <section class="results">
+      <h2>Намерени резултати</h2>
+      <ul id="resultsList" class="results-list"></ul>
+    </section>
+
+    <p id="status" class="status" aria-live="polite"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
